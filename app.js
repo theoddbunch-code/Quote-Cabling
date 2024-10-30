@@ -10,3 +10,12 @@ document.getElementById('marketType').addEventListener('change', function() {
         securitySection.style.display = 'none';
     }
 });
+document.getElementById('someoneElseCheckbox').addEventListener('change', function() {
+    const managerInfo = document.getElementById('managerInfo');
+
+    if (this.checked) {
+        managerInfo.style.display = 'block'; // Show the hidden fields
+    } else {
+        managerInfo.style.display = 'none';  // Hide the hidden fields
+    }
+});
