@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAP Request Creation Form</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Add your custom CSS file here -->
+</head>
+<body>
+    <div class="container">
+        <h1>Bari Technical Solutions</h1>
+        <h2>Request SAP # Creation Form</h2>
+
+        <form class="form-container">
+            <fieldset>
+                <legend>SAP Creation Request (SAPs are created by the Billing team)</legend>
+
+                <!-- Requestor Info -->
+                <div class="form-group">
+                    <label for="requestorName" class="form-label">Requestor Name</label>
+                    <input type="text" id="requestorName" class="form-input" name="requestorName" value="Armandsdeep Singh" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="requestorNumber" class="form-label">Requestor Number</label>
+                    <input type="text" id="requestorNumber" class="form-input" name="requestorNumber" value="73041" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="requestorCostCenter" class="form-label">Requestor Cost Center</label>
+                    <input type="text" id="requestorCostCenter" class="form-input" name="requestorCostCenter" value="150010" required>
+                </div>
+
+                <div class="form-group">
+                    <label><input type="checkbox" class="form-checkbox" name="requestingForSomeoneElse"> I am requesting for someone else</label>
+                </div>
+
+                <!-- Province Dropdown -->
+                <div class="form-group">
+                    <label for="province" class="form-label">Province</label>
+                    <select id="province" name="province" class="form-select" required>
+                        <option value="">Please select:</option>
+                        <option value="province1">Province 1</option>
+                        <option value="province2">Province 2</option>
+                    </select>
+                </div>
+
+                <!-- Market Dropdown -->
+                <div class="form-group">
+                    <label for="market" class="form-label">Market</label>
+                    <select id="market" name="market" class="form-select" required>
+                        <option value="">Please select:</option>
+                        <option value="market1">Market 1</option>
+                        <option value="market2">Market 2</option>
+                    </select>
+                </div>
+
+                <!-- Other Inputs -->
+                <div class="form-group">
+                    <label for="networkNumber" class="form-label">Network Number</label>
+                    <input type="text" id="networkNumber" name="networkNumber" class="form-input">
+                </div>
+
+                <div class="form-group">
+                    <label for="purchaseOrder" class="form-label">Purchase Order (if applicable)</label>
+                    <input type="text" id="purchaseOrder" name="purchaseOrder" class="form-input">
+                </div>
+
+                <!-- Partner Type Dropdown -->
+                <div class="form-group">
+                    <label for="partnerType" class="form-label">Partner Type</label>
+                    <select id="partnerType" name="partnerType" class="form-select" required>
+                        <option value="">Please select:</option>
+                        <option value="type1">Type 1</option>
+                        <option value="type2">Type 2</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="siteContact" class="form-label">Site Contact Name (If applicable)</label>
+                    <input type="text" id="siteContact" name="siteContact" class="form-input">
+                </div>
+
+                <!-- Site Address -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="siteAddressNumber" class="form-label">Site Address Number</label>
+                        <input type="text" id="siteAddressNumber" name="siteAddressNumber" class="form-input" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="siteAddressStreet" class="form-label">Site Address Street</label>
+                        <input type="text" id="siteAddressStreet" name="siteAddressStreet" class="form-input" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="siteCity" class="form-label">Site City</label>
+                        <input type="text" id="siteCity" name="siteCity" class="form-input" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sitePostalCode" class="form-label">Site Postal Code</label>
+                        <input type="text" id="sitePostalCode" name="sitePostalCode" class="form-input">
+                    </div>
+                </div>
+
+                <!-- Date Fields -->
+                <div class="form-group">
+                    <label for="startDate" class="form-label">Start Date</label>
+                    <input type="date" id="startDate" name="startDate" class="form-input" value="2024-10-30" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="dueDate" class="form-label">Due Date</label>
+                    <input type="date" id="dueDate" name="dueDate" class="form-input" value="2024-10-30" required>
+                </div>
+
+                <!-- SAP Description -->
+                <div class="form-group">
+                    <label for="sapDescription" class="form-label">SAP Description</label>
+                    <textarea id="sapDescription" name="sapDescription" class="form-textarea"></textarea>
+                </div>
+
+                <!-- Billing Type Dropdown -->
+                <div class="form-group">
+                    <label for="billingType" class="form-label">Billing Type</label>
+                    <select id="billingType" name="billingType" class="form-select" required>
+                        <option value="">Please select:</option>
+                        <option value="type1">Type 1</option>
+                        <option value="type2">Type 2</option>
+                    </select>
+                </div>
+
+                <!-- PO Request Checkbox -->
+                <div class="form-group">
+                    <label><input type="checkbox" class="form-checkbox" name="poRequest"> PO Request (Check if you require a PO when SAP is created)</label>
+                </div>
+
+                <!-- Attachments -->
+                <div class="form-group">
+                    <label for="attachments" class="form-label">Attachments</label>
+                    <input type="file" id="attachments" name="attachments" class="form-input">
+                </div>
+
+                <!-- Comments Section -->
+                <div class="form-group">
+                    <label for="comments" class="form-label">Comments Section</label>
+                    <textarea id="comments" name="comments" class="form-textarea"></textarea>
+                </div>
+
+                <!-- Buttons -->
+                <button type="button" class="btn btn-primary" onclick="handleSummary()">Summary</button>
+                <button type="reset" class="btn btn-secondary">Clear</button>
+                <button type="button" class="btn btn-secondary" onclick="generatePDF()">PDF</button>
+                <button type="submit" class="btn btn-success">Submit</button>
+            </fieldset>
+        </form>
+    </div>
+    <script src="app.js"></script> <!-- Add your JavaScript file here -->
+</body>
+</html>
