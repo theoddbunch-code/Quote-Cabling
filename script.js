@@ -120,7 +120,7 @@ function loadForm() {
                 console.log("Market Type selected:", marketType);  // Debugging log
                 
                 // Show Job Type section only if Market Type is Riser or KG10
-                if (marketType === "Riser" || marketType === "KG10") {
+                if (marketType === "Type7" || marketType === "Type8") {
                     jobTypeSection.style.display = "block";
                     console.log("Job Type section shown");  // Debugging log
                 } else {
