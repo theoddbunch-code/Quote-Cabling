@@ -4,14 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Main Form Page</title>
-    <link rel="stylesheet" href="styleindex.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>Request SAP # Creation Form</h1>
-        
-        <div class="form-container">
-            <form id="mainForm">
+        <h1>Technical Solutions</h1>
+        <h2>Request Form</h2>
+
+        <form class="form-container">
+            <fieldset>
+                <legend>Request Information</legend>
+
                 <!-- Date Field -->
                 <div class="form-group">
                     <label class="form-label" for="date">Date</label>
@@ -55,10 +58,10 @@
                         <option value="formB">Form B</option>
                     </select>
                 </div>
-            </form>
-        </div>
+            </fieldset>
+        </form>
 
-        <!-- Dynamic Form Content -->
+        <!-- Placeholder for dynamic form content -->
         <div id="dynamicFormContent" class="form-container"></div>
     </div>
 
