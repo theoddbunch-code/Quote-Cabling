@@ -118,7 +118,11 @@ function loadForm() {
                     <legend>Equipment Details</legend>
                     <div class="form-group">
                         <label class="form-label" for="equipmentType">Equipment required</label>
-                        <input type="text" id="equipmentType" name="equipmentType" class="form-input" placeholder="Enter equipment type">
+                        <select id="equipmentType" name="equipmentType" class="form-select" placeholder="Enter equipment type">
+                            <option value="equip1">Forklift</option>
+                            <option value="equip2">Scissor lift</option>
+                            <option value="equip3">Special Equipment</option>
+                        </select>
                     </div>
                     <div class="form-group">
                         <label class="form-label" for="equipmentDescription">Equipment Description</label>
