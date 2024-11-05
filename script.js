@@ -110,17 +110,21 @@ function loadForm() {
         `;
 
         // Add event listener to the Market Type dropdown
-        document.getElementById("marketType").addEventListener("change", function() {
-            const marketType = this.value;
-            const jobTypeSection = document.getElementById("jobTypeSection");
-            
-            // Show Job Type section only if Market Type is Riser or KG10
-            if (marketType === "Riser" || marketType === "KG10") {
-                jobTypeSection.style.display = "block";
-            } else {
-                jobTypeSection.style.display = "none";
-            }
-        });
+        const marketTypeDropdown = document.getElementById("marketType");
+        const jobTypeSection = document.getElementById("jobTypeSection");
+
+        if (marketTypeDropdown) {
+            marketTypeDropdown.addEventListener("change", function() {
+                const marketType = this.value;
+                
+                // Show Job Type section only if Market Type is Riser or KG10
+                if (marketType === "Riser" || marketType === "KG10") {
+                    jobTypeSection.style.display = "block";
+                } else {
+                    jobTypeSection.style.display = "none";
+                }
+            });
+        }
     } else if (formType === "formB") {
         // Load Form B
         dynamicFormContent.innerHTML = `
