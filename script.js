@@ -9,7 +9,7 @@ function loadForm() {
         // Load Form A
         dynamicFormContent.innerHTML = `
             <h2>Form A - Worksite and Customer Information</h2>
-            <form class="form-container">
+            <form class="form-container" id="formA">
                 <fieldset>
                     <legend>Worksite Information</legend>
                     <div class="form-row">
@@ -88,9 +88,39 @@ function loadForm() {
                     </div>
                 </fieldset>
 
+                <!-- Job Type Section (initially hidden) -->
+                <fieldset id="jobTypeSection" style="display: none;">
+                    <legend>Job Type</legend>
+                    <div class="form-group">
+                        <label class="form-label" for="jobType">Job Type</label>
+                        <select id="jobType" name="jobType" class="form-select">
+                            <option value="">Select Job Type</option>
+                            <option value="Type1">Type 1</option>
+                            <option value="Type2">Type 2</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="descriptionOfWork">Description of Work</label>
+                        <textarea id="descriptionOfWork" name="descriptionOfWork" class="form-input" rows="4" placeholder="Enter description..."></textarea>
+                    </div>
+                </fieldset>
+
                 <button type="submit" class="btn btn-primary">Submit Form A</button>
             </form>
         `;
+
+        // Add event listener to the Market Type dropdown
+        document.getElementById("marketType").addEventListener("change", function() {
+            const marketType = this.value;
+            const jobTypeSection = document.getElementById("jobTypeSection");
+            
+            // Show Job Type section only if Market Type is Riser or KG10
+            if (marketType === "Riser" || marketType === "KG10") {
+                jobTypeSection.style.display = "block";
+            } else {
+                jobTypeSection.style.display = "none";
+            }
+        });
     } else if (formType === "formB") {
         // Load Form B
         dynamicFormContent.innerHTML = `
