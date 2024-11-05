@@ -1,4 +1,4 @@
-document.getElementById('marketType').addEventListener('change', function() {
+/*document.getElementById('marketType').addEventListener('change', function() {
     const equipmentSection = document.getElementById('equipmentSection');
     const securitySection = document.getElementById('securitySection');
     
@@ -9,7 +9,7 @@ document.getElementById('marketType').addEventListener('change', function() {
         equipmentSection.style.display = 'none';
         securitySection.style.display = 'none';
     }
-});
+});*/
 document.addEventListener("DOMContentLoaded", () => {
     const managerCheckbox = document.getElementById("someoneElseCheckbox");
     const managerDetails = document.getElementById("managerInfo");
