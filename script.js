@@ -136,7 +136,6 @@ function loadForm() {
                             <option value="in">In Tenant Space</option>
                             <option value="out">Out Tenant Space</option>
                         </select>
-                        <small class="help-text">Available KG10/riser and Scissor lift selected</small>
                     </div>
                 </fieldset>
 
