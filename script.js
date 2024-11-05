@@ -114,16 +114,22 @@ function loadForm() {
         const jobTypeSection = document.getElementById("jobTypeSection");
 
         if (marketTypeDropdown) {
+            console.log("Market Type dropdown found. Adding event listener."); // Debugging log
             marketTypeDropdown.addEventListener("change", function() {
                 const marketType = this.value;
+                console.log("Market Type selected:", marketType);  // Debugging log
                 
                 // Show Job Type section only if Market Type is Riser or KG10
                 if (marketType === "Riser" || marketType === "KG10") {
                     jobTypeSection.style.display = "block";
+                    console.log("Job Type section shown");  // Debugging log
                 } else {
                     jobTypeSection.style.display = "none";
+                    console.log("Job Type section hidden");  // Debugging log
                 }
             });
+        } else {
+            console.error("Market Type dropdown not found.");  // Debugging error if Market Type dropdown is missing
         }
     } else if (formType === "formB") {
         // Load Form B
