@@ -105,7 +105,7 @@ function loadForm() {
                     </div>
                 </fieldset>
 
-                <button type="submit" class="btn btn-primary">Submit Form A</button>
+                <button type="submit" class="btn btn-primary">Submit Form</button>
             </form>
         `;
 
