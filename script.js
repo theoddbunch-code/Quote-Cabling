@@ -105,6 +105,36 @@ function loadForm() {
                     </div>
                 </fieldset>
 
+                <!-- Equipment Required Checkbox -->
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" id="equipmentRequired" name="equipmentRequired">
+                        Equipment Required
+                    </label>
+                </div>
+
+                <!-- Equipment Section (initially hidden) -->
+                <fieldset id="equipmentSection" style="display: none;">
+                    <legend>Equipment Details</legend>
+                    <div class="form-group">
+                        <label class="form-label" for="equipmentType">Equipment required</label>
+                        <input type="text" id="equipmentType" name="equipmentType" class="form-input" placeholder="Enter equipment type">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="equipmentDescription">Equipment Description</label>
+                        <textarea id="equipmentDescription" name="equipmentDescription" class="form-input" rows="3" placeholder="Enter description..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="liftUse">Is the lift being used in or out tenants space?</label>
+                        <select id="liftUse" name="liftUse" class="form-select">
+                            <option value="">Select</option>
+                            <option value="in">In Tenant Space</option>
+                            <option value="out">Out Tenant Space</option>
+                        </select>
+                        <small class="help-text">Available KG10/riser and Scissor lift selected</small>
+                    </div>
+                </fieldset>
+
                 <button type="submit" class="btn btn-primary">Submit Form</button>
             </form>
         `;
@@ -114,22 +144,30 @@ function loadForm() {
         const jobTypeSection = document.getElementById("jobTypeSection");
 
         if (marketTypeDropdown) {
-            console.log("Market Type dropdown found. Adding event listener."); // Debugging log
             marketTypeDropdown.addEventListener("change", function() {
                 const marketType = this.value;
-                console.log("Market Type selected:", marketType);  // Debugging log
                 
                 // Show Job Type section only if Market Type is Riser or KG10
                 if (marketType === "Type7" || marketType === "Type8") {
                     jobTypeSection.style.display = "block";
-                    console.log("Job Type section shown");  // Debugging log
                 } else {
                     jobTypeSection.style.display = "none";
-                    console.log("Job Type section hidden");  // Debugging log
                 }
             });
-        } else {
-            console.error("Market Type dropdown not found.");  // Debugging error if Market Type dropdown is missing
+        }
+
+        // Add event listener to the Equipment Required checkbox
+        const equipmentCheckbox = document.getElementById("equipmentRequired");
+        const equipmentSection = document.getElementById("equipmentSection");
+
+        if (equipmentCheckbox) {
+            equipmentCheckbox.addEventListener("change", function() {
+                if (this.checked) {
+                    equipmentSection.style.display = "block";
+                } else {
+                    equipmentSection.style.display = "none";
+                }
+            });
         }
     } else if (formType === "formB") {
         // Load Form B
