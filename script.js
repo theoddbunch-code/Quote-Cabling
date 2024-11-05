@@ -8,7 +8,7 @@ function loadForm() {
     if (formType === "formA") {
         // Load Form A
         dynamicFormContent.innerHTML = `
-            <h2>Form A</h2>
+            <h2>Sitewalk </h2>
             <form class="form-container">
                 <div class="form-group">
                     <label class="form-label" for="fieldA1">Field A1</label>
