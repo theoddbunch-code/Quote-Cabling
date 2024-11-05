@@ -119,6 +119,7 @@ function loadForm() {
                     <div class="form-group">
                         <label class="form-label" for="equipmentType">Equipment required</label>
                         <select id="equipmentType" name="equipmentType" class="form-select" placeholder="Enter equipment type">
+                            <option value="none" selected disabled hidden>Select an Option</option>
                             <option value="equip1">Forklift</option>
                             <option value="equip2">Scissor lift</option>
                             <option value="equip3">Special Equipment</option>
