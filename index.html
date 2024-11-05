@@ -38,6 +38,20 @@
                     <input type="text" id="sapNumber" name="sapNumber" class="form-input" placeholder="Enter SAP #">
                     <small class="help-text">Don't have a SAP number? <a href="Sap.html" target="_blank">Click Here</a></small>
                 </div>
+                
+                <!-- Form Type Selection -->
+                <div class="form-group">
+                    <label class="form-label" for="formType">Form Type</label>
+                    <select id="formType" name="formType" class="form-select" required onchange="loadForm()">
+                        <option value="">Select Form Type</option>
+                        <option value="formA">Site Walk</option>
+                        <option value="formB">Project Quotes</option>
+                        <option value="formC">Completion</option>
+                        <option value="formD">Pre-invoice</option>
+                    </select>
+                </div>
+            </fieldset>
+        </form>
 
                 <!-- Market Type -->
                 <div class="form-group">
@@ -57,19 +71,7 @@
                     </select>
                 </div>
 
-                <!-- Form Type Selection -->
-                <div class="form-group">
-                    <label class="form-label" for="formType">Form Type</label>
-                    <select id="formType" name="formType" class="form-select" required onchange="loadForm()">
-                        <option value="">Select Form Type</option>
-                        <option value="formA">Site Walk</option>
-                        <option value="formB">Project Quotes</option>
-                        <option value="formC">Completion</option>
-                        <option value="formD">Pre-invoice</option>
-                    </select>
-                </div>
-            </fieldset>
-        </form>
+                
 
         <!-- Placeholder for dynamic form content -->
         <div id="dynamicFormContent" class="form-container"></div>
