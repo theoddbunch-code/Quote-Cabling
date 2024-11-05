@@ -6,9 +6,9 @@ function loadForm() {
     dynamicFormContent.innerHTML = "";
 
     if (formType === "formA") {
-        // Load Form A
+        // Load Form A with Job Type section hidden by default
         dynamicFormContent.innerHTML = `
-            <h2>Sitewalk Information</h2>
+            <h2>Form A - Worksite and Customer Information</h2>
             <form class="form-container" id="formA">
                 <fieldset>
                     <legend>Worksite Information</legend>
@@ -88,6 +88,14 @@ function loadForm() {
                     </div>
                 </fieldset>
 
+                <!-- Equipment Required Checkbox -->
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" id="equipmentRequired" name="equipmentRequired">
+                        Equipment Required
+                    </label>
+                </div>
+
                 <!-- Job Type Section (initially hidden) -->
                 <fieldset id="jobTypeSection" style="display: none;">
                     <legend>Job Type</legend>
@@ -105,22 +113,18 @@ function loadForm() {
                     </div>
                 </fieldset>
 
-                <button type="submit" class="btn btn-primary">Submit Form</button>
+                <button type="submit" class="btn btn-primary">Submit Form A</button>
             </form>
         `;
 
-        // Add event listener to the Market Type dropdown
-        const marketTypeDropdown = document.getElementById("marketType");
+        // Add event listener to the Equipment Required checkbox
+        const equipmentCheckbox = document.getElementById("equipmentRequired");
         const jobTypeSection = document.getElementById("jobTypeSection");
 
-        if (marketTypeDropdown) {
-            console.log("Market Type dropdown found. Adding event listener."); // Debugging log
-            marketTypeDropdown.addEventListener("change", function() {
-                const marketType = this.value;
-                console.log("Market Type selected:", marketType);  // Debugging log
-                
-                // Show Job Type section only if Market Type is Riser or KG10
-                if (marketType === "Type7" || marketType === "Type8") {
+        if (equipmentCheckbox) {
+            console.log("Equipment Required checkbox found. Adding event listener."); // Debugging log
+            equipmentCheckbox.addEventListener("change", function() {
+                if (this.checked) {
                     jobTypeSection.style.display = "block";
                     console.log("Job Type section shown");  // Debugging log
                 } else {
@@ -129,7 +133,7 @@ function loadForm() {
                 }
             });
         } else {
-            console.error("Market Type dropdown not found.");  // Debugging error if Market Type dropdown is missing
+            console.error("Equipment Required checkbox not found.");  // Debugging error if checkbox is missing
         }
     } else if (formType === "formB") {
         // Load Form B
