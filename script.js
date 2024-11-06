@@ -191,6 +191,42 @@ function loadForm() {
                     <textarea id="scopeOfRequirements" name="scopeOfRequirements" class="form-input" rows="3" placeholder="Enter scope of requirements..."></textarea>
                 </div>
             </fieldset>
+            <!-- Material Required Checkbox -->
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" id="materialRequired" name="materialRequired">
+                        Material
+                    </label>
+                </div>
+
+                <!-- Materials Section (initially hidden) -->
+                <fieldset id="materialSection" style="display: none;">
+                    <legend>Materials</legend>
+                    ${Array(8).fill(`
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label" for="quantity">Quantity</label>
+                                <input type="number" name="quantity" class="form-input" placeholder="Quantity">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="material">Material</label>
+                                <select name="material" class="form-select">
+                                    <option value="">Please select</option>
+                                    <option value="Material1">Material 1</option>
+                                    <option value="Material2">Material 2</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="unitPrice">Unit Price</label>
+                                <input type="number" name="unitPrice" class="form-input" placeholder="Unit Price">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="total">Total</label>
+                                <input type="number" name="total" class="form-input" placeholder="Total" readonly>
+                            </div>
+                        </div>
+                    `).join('')}
+                </fieldset>
 
             <button type="submit" class="btn btn-primary">Submit Form</button>
         `;
@@ -202,7 +238,7 @@ function loadForm() {
         if (marketTypeDropdown) {
             marketTypeDropdown.addEventListener("change", function() {
                 const marketType = this.value;
-                if (marketType === "Riser" || marketType === "KG10") {
+                if (marketType === "Type7" || marketType === "Type8") {
                     jobTypeSection.style.display = "block";
                 } else {
                     jobTypeSection.style.display = "none";
@@ -235,6 +271,16 @@ function loadForm() {
         if (accessRequirementCheckbox) {
             accessRequirementCheckbox.addEventListener("change", function() {
                 accessRequirementSection.style.display = this.checked ? "block" : "none";
+            });
+        }
+
+        // New event listener for Material checkbox
+        const materialCheckbox = document.getElementById("materialRequired");
+        const materialSection = document.getElementById("materialSection");
+
+        if (materialCheckbox) {
+            materialCheckbox.addEventListener("change", function() {
+                materialSection.style.display = this.checked ? "block" : "none";
             });
         }
     } else if (formType === "formB") {
