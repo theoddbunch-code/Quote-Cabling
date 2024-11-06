@@ -12,7 +12,7 @@ function loadForm() {
            <h2>Sitewalk Information</h2>
             <form class="form-container" id="formA">
                 <fieldset>
-                    <legend>Worksite Information</legend>
+                    <legend>Worksite Information <span style="color: red;">(should autopopulate by providing SAP)</span></legend>
                     <div class="form-row">
                         <div class="form-group">
                             <label class="form-label" for="worksiteAddress">Address</label>
@@ -52,7 +52,7 @@ function loadForm() {
                 </fieldset>
                 
                 <fieldset>
-                    <legend>Customer Information</legend>
+                    <legend>Customer Information <span style="color: red;">(should autopopulate by providing SAP)</span></legend>
                     <div class="form-row">
                         <div class="form-group">
                             <label class="form-label" for="customerContactName">Contact Name</label>
