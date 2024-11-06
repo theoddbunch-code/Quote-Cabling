@@ -325,12 +325,65 @@ function loadForm() {
                 labourSection.style.display = this.checked ? "block" : "none";
             });
         }
-    } else if (formType === "formB") {
+    } else if (formType === "formD") {
         // Load Form B
         dynamicFormContent.innerHTML = `
-            <h2>Form B</h2>
-            <form class="form-container">
-                <!-- Form B fields here -->
+<h2>Form D</h2>
+            <form class="form-container" id="formD">
+                <fieldset>
+                    <legend>Total</legend>
+
+                    <div class="form-group">
+                        <label class="form-label" for="sap">SAP</label>
+                        <input type="text" id="sap" name="sap" class="form-input" placeholder="SAP Number">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label" for="hours">Hours</label>
+                            <input type="number" id="hours" name="hours" class="form-input" placeholder="Hours">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="rate">Rate</label>
+                            <input type="number" id="rate" name="rate" class="form-input" placeholder="Rate">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="total">Total</label>
+                            <input type="number" id="total" name="total" class="form-input" placeholder="Total" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="markup">Markup</label>
+                            <select id="markup" name="markup" class="form-select">
+                                <option value="">Select Markup</option>
+                                <option value="5">5%</option>
+                                <option value="10">10%</option>
+                                <option value="15">15%</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="materialTotal">Material Total</label>
+                        <input type="number" id="materialTotal" name="materialTotal" class="form-input" placeholder="Material Total" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="labourTotal">Labour Total</label>
+                        <input type="number" id="labourTotal" name="labourTotal" class="form-input" placeholder="Labour Total" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="subtotal">Subtotal</label>
+                        <input type="number" id="subtotal" name="subtotal" class="form-input" placeholder="Subtotal" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="hst">HST</label>
+                        <input type="number" id="hst" name="hst" class="form-input" placeholder="HST" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="grandTotal">Total</label>
+                        <input type="number" id="grandTotal" name="grandTotal" class="form-input" placeholder="Total" readonly>
+                    </div>
+                </fieldset>
+
+                <button type="submit" class="btn btn-primary">Submit Form</button>
             </form>
         `;
     }
