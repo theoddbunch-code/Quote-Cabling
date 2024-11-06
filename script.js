@@ -191,6 +191,7 @@ function loadForm() {
                     <textarea id="scopeOfRequirements" name="scopeOfRequirements" class="form-input" rows="3" placeholder="Enter scope of requirements..."></textarea>
                 </div>
             </fieldset>
+            
             <!-- Material Required Checkbox -->
                 <div class="form-group">
                     <label>
@@ -227,6 +228,14 @@ function loadForm() {
                         </div>
                     `).join('')}
                 </fieldset>
+
+                <!-- Labours Required Checkbox -->
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" id="labourRequired" name="labourRequired">
+                    Labours
+                </label>
+            </div>
                 
                 <!-- Labours Section (initially hidden) -->
                 <fieldset id="labourSection" style="display: none;">
