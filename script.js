@@ -1,4 +1,4 @@
-// Existing loadForm function with all previously added sections and logic
+
 function loadForm() {
     const formType = document.getElementById("formType").value;
     const dynamicFormContent = document.getElementById("dynamicFormContent");
@@ -7,7 +7,7 @@ function loadForm() {
     dynamicFormContent.innerHTML = "";
 
     if (formType === "formA") {
-        // Load Form A with all previously added sections
+        // Load Form A (Main Form)
         dynamicFormContent.innerHTML = `
            <h2>Sitewalk Information</h2>
             <form class="form-container" id="formA">
@@ -97,8 +97,13 @@ function loadForm() {
                     <label class="form-label" for="jobType">Job Type</label>
                     <select id="jobType" name="jobType" class="form-select">
                         <option value="">Select Job Type</option>
-                        <option value="Type1">Type 1</option>
-                        <option value="Type2">Type 2</option>
+                        <option value="Job1">KG10 with material</option>
+                        <option value="Job2">KG10 without material</option>
+                        <option value="Job3">KG10 overtime with material</option>
+                        <option value="Job4">KG10 overtime without material</option>
+                        <option value="Job5">Riser with material</option>
+                        <option value="Job6">Riser overtime with material</option>
+                        <option value="Job7">Riser overtime without material</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -265,7 +270,7 @@ function loadForm() {
             <button type="submit" class="btn btn-primary">Submit Form</button>
         `;
 
-        // Previous event listeners for other sections
+        // event listener for Market Type
         const marketTypeDropdown = document.getElementById("marketType");
         const jobTypeSection = document.getElementById("jobTypeSection");
 
@@ -279,7 +284,7 @@ function loadForm() {
                 }
             });
         }
-
+        // event listener for Equipment Requirement checkbox
         const equipmentCheckbox = document.getElementById("equipmentRequired");
         const equipmentSection = document.getElementById("equipmentSection");
 
@@ -288,7 +293,7 @@ function loadForm() {
                 equipmentSection.style.display = this.checked ? "block" : "none";
             });
         }
-
+        // event listener for Security Requirement checkbox
         const securityCheckbox = document.getElementById("securityRequired");
         const securitySection = document.getElementById("securitySection");
 
@@ -298,7 +303,7 @@ function loadForm() {
             });
         }
 
-        // New Access Requirement functionality
+        // event listener for Access Requirement checkbox
         const accessRequirementCheckbox = document.getElementById("accessRequirementCheckbox");
         const accessRequirementSection = document.getElementById("accessRequirementSection");
 
@@ -308,7 +313,7 @@ function loadForm() {
             });
         }
 
-        // New event listener for Material checkbox
+        // event listener for Material checkbox
         const materialCheckbox = document.getElementById("materialRequired");
         const materialSection = document.getElementById("materialSection");
 
@@ -318,7 +323,7 @@ function loadForm() {
             });
         }
 
-         // New event listener for Labours checkbox
+         // event listener for Labours checkbox
         const labourCheckbox = document.getElementById("labourRequired");
         const labourSection = document.getElementById("labourSection");
 
@@ -328,7 +333,7 @@ function loadForm() {
             });
         }
     } else if (formType === "formD") {
-        // Load Form B
+        // Load Form for Pre-invoice
         dynamicFormContent.innerHTML = `
 <h2>Pre-Invoice</h2>
             <form class="form-container" id="formD">
