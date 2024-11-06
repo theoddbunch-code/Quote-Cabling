@@ -205,7 +205,7 @@ function loadForm() {
 
                 <!-- Materials Section (initially hidden) -->
                 <fieldset id="materialSection" style="display: none;">
-                    <legend>Materials</legend>
+                    <legend>Materials <span style="color: red;">(Dynamic step by step list)</span></legend>
                     ${Array(8).fill(`
                         <div class="form-row">
                             <div class="form-group">
@@ -253,7 +253,7 @@ function loadForm() {
                             <input type="number" id="numHours" name="numHours" class="form-input" placeholder="Quantity">
                         </div>
                         <div class="form-group">
-                            <label class="form-label" for="totalHours">Total hours</label>
+                            <label class="form-label" for="totalHours">Total hours <span style="color: red;">(Autopopulate)</span></label>
                             <input type="number" id="totalHours" name="totalHours" class="form-input" placeholder="Quantity" readonly>
                         </div>
                     </div>
@@ -347,15 +347,15 @@ function loadForm() {
                             <input type="number" id="hours" name="hours" class="form-input" placeholder="Hours">
                         </div>
                         <div class="form-group">
-                            <label class="form-label" for="rate">Rate</label>
+                            <label class="form-label" for="rate">Rate<span style="color: red;">(should autopopulate from market type)</span></label>
                             <input type="number" id="rate" name="rate" class="form-input" placeholder="Rate">
                         </div>
                         <div class="form-group">
-                            <label class="form-label" for="total">Total</label>
+                            <label class="form-label" for="total">Total <span style="color: red;">(should autopopulate)</span></label>
                             <input type="number" id="total" name="total" class="form-input" placeholder="Total" readonly>
                         </div>
                         <div class="form-group">
-                            <label class="form-label" for="markup">Markup</label>
+                            <label class="form-label" for="markup">Markup <span style="color: red;">(depends upon the market)</span></label>
                             <select id="markup" name="markup" class="form-select">
                                 <option value="">Select Markup</option>
                                 <option value="5">5%</option>
@@ -365,11 +365,11 @@ function loadForm() {
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="form-label" for="materialTotal">Material Total</label>
+                        <label class="form-label" for="materialTotal">Material Total <span style="color: red;">(should autopopulate from materials in sitewalk)</span></label>
                         <input type="number" id="materialTotal" name="materialTotal" class="form-input" placeholder="Material Total" readonly>
                     </div>
                     <div class="form-group">
-                        <label class="form-label" for="labourTotal">Labour Total</label>
+                        <label class="form-label" for="labourTotal">Labour Total<span style="color: red;">(autopopulate)</span></label>
                         <input type="number" id="labourTotal" name="labourTotal" class="form-input" placeholder="Labour Total" readonly>
                     </div>
                     <div class="form-group">
@@ -381,7 +381,7 @@ function loadForm() {
                         <input type="number" id="hst" name="hst" class="form-input" placeholder="HST" readonly>
                     </div>
                     <div class="form-group">
-                        <label class="form-label" for="grandTotal">Total</label>
+                        <label class="form-label" for="grandTotal">Grand Total<span style="color: red;">(Autopopulate)</span></label>
                         <input type="number" id="grandTotal" name="grandTotal" class="form-input" placeholder="Total" readonly>
                     </div>
                 </fieldset>
