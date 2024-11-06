@@ -227,6 +227,29 @@ function loadForm() {
                         </div>
                     `).join('')}
                 </fieldset>
+                
+                <!-- Labours Section (initially hidden) -->
+                <fieldset id="labourSection" style="display: none;">
+                    <legend>Labours</legend>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label" for="numTechs">Number of techs</label>
+                            <input type="number" id="numTechs" name="numTechs" class="form-input" placeholder="Quantity">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="numHours">Number of Hours</label>
+                            <input type="number" id="numHours" name="numHours" class="form-input" placeholder="Quantity">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="totalHours">Total hours</label>
+                            <input type="number" id="totalHours" name="totalHours" class="form-input" placeholder="Quantity" readonly>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="commentSection">Comment section</label>
+                        <textarea id="commentSection" name="commentSection" class="form-input" rows="3" placeholder="Comments - Scope of Work"></textarea>
+                    </div>
+                </fieldset>
 
             <button type="submit" class="btn btn-primary">Submit Form</button>
         `;
@@ -281,6 +304,16 @@ function loadForm() {
         if (materialCheckbox) {
             materialCheckbox.addEventListener("change", function() {
                 materialSection.style.display = this.checked ? "block" : "none";
+            });
+        }
+
+         // New event listener for Labours checkbox
+        const labourCheckbox = document.getElementById("labourRequired");
+        const labourSection = document.getElementById("labourSection");
+
+        if (labourCheckbox) {
+            labourCheckbox.addEventListener("change", function() {
+                labourSection.style.display = this.checked ? "block" : "none";
             });
         }
     } else if (formType === "formB") {
