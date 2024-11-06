@@ -133,7 +133,6 @@ function loadForm() {
                         <option value="in">In Tenant Space</option>
                         <option value="out">Out Tenant Space</option>
                     </select>
-                    <small class="help-text">Available KG10/riser and Scissor lift selected</small>
                 </div>
             </fieldset>
 
@@ -156,7 +155,6 @@ function loadForm() {
                     <label class="form-label" for="securityDescription">Security Details</label>
                     <textarea id="securityDescription" name="securityDescription" class="form-input" rows="3" placeholder="Enter security details..."></textarea>
                 </div>
-                <small class="help-text">Requirement: Charging Security Flag for KG10 and Security selected</small>
             </fieldset>
 
             <!-- Access Requirement Checkbox -->
