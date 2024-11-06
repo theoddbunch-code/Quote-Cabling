@@ -6,7 +6,7 @@ function loadForm() {
     dynamicFormContent.innerHTML = "";
 
     if (formType === "formA") {
-        // Load Form A
+        // Load Form A with Job Type, Equipment, and Security sections
         dynamicFormContent.innerHTML = `
             <h2>Sitewalk Information</h2>
             <form class="form-container" id="formA">
@@ -118,12 +118,7 @@ function loadForm() {
                     <legend>Equipment Details</legend>
                     <div class="form-group">
                         <label class="form-label" for="equipmentType">Equipment required</label>
-                        <select id="equipmentType" name="equipmentType" class="form-select" placeholder="Enter equipment type">
-                            <option value="none" selected disabled hidden>Select an Option</option>
-                            <option value="equip1">Forklift</option>
-                            <option value="equip2">Scissor lift</option>
-                            <option value="equip3">Special Equipment</option>
-                        </select>
+                        <input type="text" id="equipmentType" name="equipmentType" class="form-input" placeholder="Enter equipment type">
                     </div>
                     <div class="form-group">
                         <label class="form-label" for="equipmentDescription">Equipment Description</label>
@@ -136,7 +131,30 @@ function loadForm() {
                             <option value="in">In Tenant Space</option>
                             <option value="out">Out Tenant Space</option>
                         </select>
+                        <small class="help-text">Available KG10/riser and Scissor lift selected</small>
                     </div>
+                </fieldset>
+
+                <!-- Security Required Checkbox -->
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" id="securityRequired" name="securityRequired">
+                        Security Required
+                    </label>
+                </div>
+
+                <!-- Security Section (initially hidden) -->
+                <fieldset id="securitySection" style="display: none;">
+                    <legend>Security Details</legend>
+                    <div class="form-group">
+                        <label class="form-label" for="securityType">Security required</label>
+                        <input type="text" id="securityType" name="securityType" class="form-input" placeholder="Enter security type">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="securityDescription">Security Details</label>
+                        <textarea id="securityDescription" name="securityDescription" class="form-input" rows="3" placeholder="Enter security details..."></textarea>
+                    </div>
+                    <small class="help-text">Requirement: Charging Security Flag for KG10 and Security selected</small>
                 </fieldset>
 
                 <button type="submit" class="btn btn-primary">Submit Form</button>
@@ -170,6 +188,20 @@ function loadForm() {
                     equipmentSection.style.display = "block";
                 } else {
                     equipmentSection.style.display = "none";
+                }
+            });
+        }
+
+        // Add event listener to the Security Required checkbox
+        const securityCheckbox = document.getElementById("securityRequired");
+        const securitySection = document.getElementById("securitySection");
+
+        if (securityCheckbox) {
+            securityCheckbox.addEventListener("change", function() {
+                if (this.checked) {
+                    securitySection.style.display = "block";
+                } else {
+                    securitySection.style.display = "none";
                 }
             });
         }
