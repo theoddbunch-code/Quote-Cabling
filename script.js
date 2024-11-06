@@ -391,3 +391,9 @@ function loadForm() {
         `;
     }
 }
+function populateDate() {
+    const dateInput = document.getElementById("date");
+    const today = new Date();
+    const formattedDate = today.toISOString().substr(0, 10); // Format as YYYY-MM-DD
+    dateInput.value = formattedDate;
+}
