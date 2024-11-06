@@ -169,19 +169,23 @@ function loadForm() {
             <fieldset id="accessRequirementSection" style="display: none;">
                 <legend>Access Requirement</legend>
                 <div class="form-group">
-                    <label class="form-label" for="accessRequirement">Access requirement</label>
+                    <label class="form-label" for="accessRequirement">Access Interval</label>
                     <select id="accessRequirement" name="accessRequirement" class="form-select">
                         <option value="">Select Access Requirement</option>
-                        <option value="Requirement1">Requirement 1</option>
-                        <option value="Requirement2">Requirement 2</option>
+                        <option value="Requirement1">AM</option>
+                        <option value="Requirement2">PM</option>
+                        <option value="Requirement3">Weekends</option>
+                        <option value="Requirement4">Overnights</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label class="form-label" for="accessRequired">Access required</label>
                     <select id="accessRequired" name="accessRequired" class="form-select">
                         <option value="">Select Access Required</option>
-                        <option value="Required1">Required 1</option>
-                        <option value="Required2">Required 2</option>
+                        <option value="Required1">Lock Box</option>
+                        <option value="Required2">IT Room</option>
+                        <option value="Required3">Concierge</option>
+                        <option value="Required4">Multi-units</option>
                     </select>
                 </div>
                 <div class="form-group">
