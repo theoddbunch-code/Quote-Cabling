@@ -328,7 +328,7 @@ function loadForm() {
     } else if (formType === "formD") {
         // Load Form B
         dynamicFormContent.innerHTML = `
-<h2>Form D</h2>
+<h2>Pre-Invoice</h2>
             <form class="form-container" id="formD">
                 <fieldset>
                     <legend>Total</legend>
