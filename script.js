@@ -15,8 +15,8 @@ function loadForm() {
                     <legend>Worksite Information</legend>
                     <div class="form-row">
                         <div class="form-group">
-                            <label class="form-label" for="worksitePhone">Phone Number</label>
-                            <input type="text" id="worksitePhone" name="worksitePhone" class="form-input">
+                            <label class="form-label" for="worksiteAddress">Address</label>
+                            <input type="text" id="worksiteAddress" name="worksiteAddress" class="form-input">
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="worksiteCity">City</label>
@@ -39,8 +39,8 @@ function loadForm() {
                             <input type="text" id="poNumber" name="poNumber" class="form-input">
                         </div>
                         <div class="form-group">
-                            <label class="form-label" for="jobNumber">Job Number</label>
-                            <input type="text" id="jobNumber" name="jobNumber" class="form-input">
+                            <label class="form-label" for="jobID">Job ID</label>
+                            <input type="text" id="jobID" name="jobID" class="form-input">
                         </div>
                     </div>
                     <div class="form-row">
@@ -80,11 +80,7 @@ function loadForm() {
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="customerProvince">Province</label>
-                            <select id="customerProvince" name="customerProvince" class="form-select">
-                                <option value="">Please select</option>
-                                <option value="Province1">Province 1</option>
-                                <option value="Province2">Province 2</option>
-                            </select>
+                            <input type="text" id="customerProvince" name="customerProvince" class="form-input">
                         </div>
                     </div>
                 </fieldset>
