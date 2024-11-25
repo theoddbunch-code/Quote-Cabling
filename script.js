@@ -11,7 +11,7 @@ function loadForm() {
         dynamicFormContent.innerHTML = `
            <h2>Sitewalk Information</h2>
             <form class="form-container" id="formA" name="sitewalk-form" method="POST" data-netlify="true" action="/index.html">
-                <input type="hidden" name="form-name" value="sitewalk-form" />
+                <input type="hidden" name="sitewalk-form" value="sitewalk-form" />
                 <fieldset>
                     <legend>Worksite Information <span style="color: red;">(should autopopulate by providing SAP)</span></legend>
                     <div class="form-row">
@@ -334,7 +334,7 @@ function loadForm() {
         dynamicFormContent.innerHTML = `
 <h2>Pre-Invoice</h2>
             <form class="form-container" id="formD" name="pre-invoice-form" method="POST" data-netlify="true" action="/index.html">
-                <input type="hidden" name="form-name" value="pre-invoice-form" />
+                <input type="hidden" name="pre-invoice-form" value="pre-invoice-form" />
                 <fieldset>
                     <legend>Total</legend>
 
