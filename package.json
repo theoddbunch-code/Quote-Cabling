@@ -1,5 +1,5 @@
 {
-  "name": "quote-cabling",
+  "name": "Quote-Cabling",
   "version": "1.0.0",
   "description": "A project for generating sitewalk forms and sending them via email using Netlify and serverless functions.",
   "main": "app.js",
