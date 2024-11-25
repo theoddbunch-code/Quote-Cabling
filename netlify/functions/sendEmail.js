@@ -11,11 +11,14 @@ exports.handler = async (event) => {
         // Generate PDF
         const pdfPath = '/tmp/sitewalk-form.pdf'; // Use /tmp for serverless environments
         const doc = new PDFDocument();
+        const fontPath = path.resolve(__dirname, 'Helvetica.ttf');
 
         // Pipe the PDF content to the file
         const writeStream = fs.createWriteStream(pdfPath);
         doc.pipe(writeStream);
 
+        doc.font(fontPath);
+        
         // Add PDF content
         doc.text(`Sitewalk Information`, { align: 'center' });
         doc.text(`\nWorksite Address: ${formData.worksiteAddress}`);
