@@ -106,8 +106,68 @@ h1, h2 {
     margin-right: 0;
 }
 
+/* Fieldsets and Legends */
+fieldset {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+legend {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Read-Only Fields */
+input[readonly] {
+    background-color: #e9ecef;
+    color: #6c757d;
+    border-color: #ced4da;
+    cursor: not-allowed;
+}
+
+/* Highlight Required Fields */
+input:required, select:required, textarea:required {
+    border-color: #ff0000;
+}
+
+input:required:focus, select:required:focus, textarea:required:focus {
+    outline-color: #ff0000;
+}
+
+/* Animation for Dynamic Content */
+#dynamicFormContent {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 /* Responsive Design */
 @media screen and (max-width: 768px) {
+    .form-container {
+        padding: 15px;
+    }
+
+    input, select, textarea {
+        width: 100%;
+    }
+
+    button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
     .form-row {
         flex-direction: column;
     }
