@@ -4,16 +4,16 @@
   "description": "A project for generating sitewalk forms and sending them via email using Netlify and serverless functions.",
   "main": "app.js",
   "scripts": {
-    "start": "netlify dev",       // For local development
-    "build": "echo 'No build required'", // No build command if purely static frontend
-    "deploy": "netlify deploy"   // To manually deploy to Netlify
+    "start": "netlify dev",       
+    "build": "echo 'No build required'", 
+    "deploy": "netlify deploy"  
   },
   "dependencies": {
-    "nodemailer": "^6.9.1",      // For sending emails
-    "pdfkit": "^0.13.0"          // For generating PDFs
+    "nodemailer": "^6.9.1",      
+    "pdfkit": "^0.13.0"         
   },
   "devDependencies": {
-    "netlify-cli": "^15.0.0"     // For local testing of Netlify functions
+    "netlify-cli": "^15.0.0"     
   },
   "keywords": ["netlify", "serverless", "pdf", "email"],
   "author": "Your Name",
