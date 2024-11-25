@@ -26,6 +26,35 @@ exports.handler = async (event) => {
         },
     });
 
+    const PDFDocument = require('pdfkit');
+const fs = require('fs');
+
+exports.handler = async (event) => {
+    const formData = JSON.parse(event.body);
+
+    // Create PDF Document
+    const doc = new PDFDocument();
+
+    // Path to the custom font
+    const fontPath = __dirname + 'Helvetica.ttf';
+
+    // Set the font
+    doc.font(fontPath);
+
+    // Add content to the PDF
+    doc.text(`Sitewalk Information`, { align: 'center' });
+    doc.text(`\nWorksite Address: ${formData.worksiteAddress}`);
+    doc.text(`City: ${formData.worksiteCity}`);
+    doc.text(`PO Number: ${formData.poNumber}`);
+    doc.end();
+
+    return {
+        statusCode: 200,
+        body: 'PDF generated successfully!',
+    };
+};
+
+
     const mailOptions = {
         from: 'your-email@gmail.com',
         to: formData.customerEmail,
