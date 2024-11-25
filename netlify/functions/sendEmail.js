@@ -11,7 +11,7 @@ exports.handler = async (event) => {
         // Generate PDF
         const pdfPath = '/tmp/sitewalk-form.pdf'; // Use /tmp for serverless environments
         const doc = new PDFDocument();
-        const fontPath = path.resolve(__dirname, 'Helvetica.ttf');
+        const fontPath = path.resolve(__dirname, '/data/Helvetica.ttf');
 
         // Pipe the PDF content to the file
         const writeStream = fs.createWriteStream(pdfPath);
