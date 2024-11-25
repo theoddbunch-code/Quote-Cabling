@@ -1,0 +1,6 @@
+[build]
+  publish = "."             # Use the root directory for hosting files
+  functions = "netlify/functions"  # Directory for Netlify functions
+
+[functions]
+  node_bundler = "esbuild"  # Ensure functions are bundled correctly
