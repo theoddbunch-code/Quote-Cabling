@@ -390,6 +390,28 @@ function loadForm() {
             </form>
         `;
     }
+    document.getElementById('formA').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+
+    const data = {};
+    formData.forEach((value, key) => {
+        data[key] = value;
+    });
+
+    try {
+        const response = await fetch('/.netlify/functions/sendEmail', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data),
+        });
+        const result = await response.text();
+        alert(result);
+    } catch (error) {
+        console.error('Error:', error);
+        alert('Submission failed.');
+    }
+});
 }
 function populateDate() {
     const dateInput = document.getElementById("date");
