@@ -394,6 +394,20 @@ function loadForm() {
     }
 
 }
+function syncToHiddenForm() {
+    const dynamicFormFields = document.querySelectorAll("#dynamicFormContent [name]");
+    dynamicFormFields.forEach((field) => {
+        const fallbackField = document.querySelector(`[name="${field.name}"]`);
+        if (fallbackField) {
+            fallbackField.value = field.value;
+        }
+    });
+}
+
+// Attach sync to dynamic form events
+document.getElementById("dynamicFormContent").addEventListener("input", syncToHiddenForm);
+document.getElementById("dynamicFormContent").addEventListener("change", syncToHiddenForm);
+
 function populateDate() {
     const dateInput = document.getElementById("date");
     const today = new Date();
