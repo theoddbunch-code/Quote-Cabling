@@ -172,3 +172,12 @@ input:required:focus, select:required:focus, textarea:required:focus {
         flex-direction: column;
     }
 }
+/* Hidden Static Form Styling */
+form[name="fallback-form"] {
+    display: none;
+    visibility: hidden;
+    height: 0;
+    width: 0;
+    overflow: hidden;
+}
+
