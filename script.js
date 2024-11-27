@@ -11,7 +11,7 @@ function loadForm() {
         dynamicFormContent.innerHTML = `
            <h2>Sitewalk Information</h2>
             <form class="form-container" id="formA" name="sitewalk-form" method="POST" data-netlify="true" action="/">
-                <input type="hidden" name="formA" value="sitewalk-form" />
+                <input type="hidden" name="form-name" value="sitewalk-form" />
                 <fieldset>
                     <legend>Worksite Information <span style="color: red;">(should autopopulate by providing SAP)</span></legend>
                     <div class="form-row">
