@@ -11,6 +11,34 @@
         <h1>Technical Solutions</h1>
         <h2>Request Form</h2>
 
+        <!-- Hidden Static Form -->
+<form name="fallback-form" method="POST" action="/" data-netlify="true" style="display: none;">
+    <input type="hidden" name="form-name" value="fallback-form" />
+    <input type="text" name="date" readonly />
+    <input type="text" name="employeeName" value="Armaandeep" readonly />
+    <input type="text" name="employeeNumber" value="73041" readonly />
+    <input type="text" name="sapNumber" readonly />
+    <select name="formType" readonly>
+        <option value="">Select Form Type</option>
+        <option value="formA">Site Walk</option>
+        <option value="formD">Pre-invoice</option>
+    </select>
+    <select name="marketType" readonly>
+        <option value="">Select Market Type</option>
+        <option value="Type1">MDU Greenfield</option>
+        <option value="Type2">MDU Brownfield</option>
+        <option value="Type3">PRISM</option>
+        <option value="Type4">Network</option>
+        <option value="Type5">SMB</option>
+        <option value="Type6">Expertech</option>
+        <option value="Type7">Riser</option>
+        <option value="Type8">KG10</option>
+        <option value="Type9">Direct Billing</option>
+        <option value="Type10">Enterprise</option>
+    </select>
+</form>
+
+
          <!-- <form name="sitewalk-form" method="POST" data-netlify="true" >
             <input type="hidden" name="form-name" value="sitewalk-form" />
         </form>
