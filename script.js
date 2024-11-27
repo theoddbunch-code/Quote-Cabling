@@ -333,8 +333,8 @@ function loadForm() {
         // Load Form for Pre-invoice
         dynamicFormContent.innerHTML = `
 <h2>Pre-Invoice</h2>
-            <form class="form-container" id="formD" name="pre-invoice-form" method="POST" data-netlify="true" action="/">
-                <input type="hidden" name="pre-invoice-form" value="pre-invoice-form" />
+            <form class="form-container" id="formD" name="pre-invoice-form" method="POST" data-netlify="true">
+                <input type="hidden" name="form-name" value="pre-invoice-form" />
                 <fieldset>
                     <legend>Total</legend>
 
