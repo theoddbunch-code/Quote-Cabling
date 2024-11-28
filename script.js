@@ -1,16 +1,19 @@
 function syncToHiddenForm() {
     const dynamicFormFields = document.querySelectorAll("#dynamicFormContent [name]");
     dynamicFormFields.forEach((field) => {
-        const fallbackField = document.querySelector(`[name="${field.name}"]`);
+        const fallbackField = document.querySelector(`form[name="fallback-form"] [name="${field.name}"]`);
         if (fallbackField) {
-            fallbackField.value = field.value;
+            fallbackField.value = field.value || "";
+            console.log(`Syncing: ${field.name} => ${field.value}`); // Debug log
+        } else {
+            console.warn(`No fallback field found for: ${field.name}`); // Debug missing fields
         }
     });
 }
 
-// Attach sync to dynamic form events
 document.getElementById("dynamicFormContent").addEventListener("input", syncToHiddenForm);
 document.getElementById("dynamicFormContent").addEventListener("change", syncToHiddenForm);
+
 
 function loadForm() {
     const formType = document.getElementById("formType").value;
