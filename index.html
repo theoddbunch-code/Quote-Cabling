@@ -10,6 +10,8 @@
     <div class="container">
         <h1>Technical Solutions</h1>
         <h2>Request Form</h2>
+<!-- <form name="main-form" method="POST" action="/" data-netlify="true" onsubmit="syncToHiddenForm();"> -->
+
 
         <!-- Hidden Static Form -->
 <form name="fallback-form" method="POST" action="/" data-netlify="true" style="display: none;">
@@ -46,7 +48,7 @@
             <input type="hidden" name="form-name" value="pre-invoice-form" />
         </form> -->
 
-         <form name="main-form" method="POST" data-netlify="true" >
+         <form name="main-form" method="POST" action="/" data-netlify="true" onsubmit="syncToHiddenForm();">
             <input type="hidden" name="form-name" value="main-form" />
             <fieldset>
                 <legend>Request Information</legend>
